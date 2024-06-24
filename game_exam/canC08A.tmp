@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp1qkwn25vsj3"]
+
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_n5qqw"]
+[ext_resource type="Texture2D" uid="uid://xo46nr0kicej" path="res://timer.png" id="1_rfp8a"]
+[ext_resource type="Script" path="res://Label.gd" id="2_am68a"]
+[ext_resource type="FontFile" uid="uid://bttn4sbekg567" path="res://alarm clock.ttf" id="3_uxj5f"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_n5qqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(556.75, 312.75)
+scale = Vector2(0.315372, 0.343029)
+texture = ExtResource("1_rfp8a")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.0112847
+anchor_top = -0.0138889
+anchor_right = 0.219618
+anchor_bottom = 0.189815
+offset_left = 414.0
+offset_top = 198.0
+offset_right = 454.0
+offset_bottom = 221.0
+theme_override_fonts/font = ExtResource("3_uxj5f")
+theme_override_font_sizes/font_size = 50
+text = "00:00:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("2_am68a")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = -0.00651042
+anchor_top = -0.00385802
+anchor_right = 0.0499132
+anchor_bottom = 0.10571
+offset_left = 618.5
+offset_top = 389.5
+offset_right = 626.5
+offset_bottom = 397.5
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 511.0
+offset_top = 393.0
+offset_right = 575.0
+offset_bottom = 462.0
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 423.0
+offset_top = 393.0
+offset_right = 462.0
+offset_bottom = 460.0
+scale = Vector2(1.56, 1)
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="ready" from="Label" to="Label" method="_on_ready"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
